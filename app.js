@@ -1,6 +1,8 @@
+const URL = "https://listausuarios-backend.onrender.com/";
+
 // Método GET
 async function getAllUsers() {
-  let url = "http://127.0.0.1:3000/users/getAllUsers";
+  let url = `${URL}/users/getAllUsers`;
   let resp = await fetch(url);
   if (!resp.ok) {
     console.error("Erro ao buscar usuários:", resp.statusText);
@@ -32,7 +34,7 @@ getAllUsers();
 
 // Método POST
 async function createUser() {
-  let url = "http://127.0.0.1:3000/users/createUsers";
+  let url = `${URL}/users/createUsers`;
 
   let nome = document.querySelector("#nome").value;
   let idade = document.querySelector("#idade").value;
@@ -59,7 +61,6 @@ async function createUser() {
 
 document.querySelector(".btn-save").addEventListener("click", createUser);
 
-
 // Método PUT
 document.querySelector(".table-section").addEventListener("click", (e) => {
   const button = e.target.closest(".btn-edit");
@@ -79,7 +80,7 @@ async function updateUsers(id) {
   document.querySelector(".btn-save").removeEventListener("click", createUser);
 
   document.querySelector(".btn-save").addEventListener("click", async () => {
-    let url = `http://127.0.0.1:3000/updateUsers/${id}`;
+    let url = `${URL}/users/updateUsers/${id}`;
 
     let nome = document.querySelector("#nome").value;
     let idade = document.querySelector("#idade").value;
@@ -90,11 +91,9 @@ async function updateUsers(id) {
 
 // Método DELETE
 async function deleteUser(id) {
-  let url = `http://127.0.0.1:3000/users/deleteUsers/${id}`;
+  let url = `${URL}/users/deleteUsers/${id}`;
   let resp = await fetch(url, {
     method: "DELETE",
   });
   window.location.reload();
 }
-
-//teste
