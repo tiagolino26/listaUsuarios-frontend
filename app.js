@@ -1,4 +1,4 @@
-const URL = "https://listausuarios-backend.onrender.com/";
+const URL = "https://listausuarios-backend.onrender.com";
 
 // Método GET
 async function getAllUsers() {
