@@ -72,7 +72,7 @@ document.querySelector(".table-section").addEventListener("click", (e) => {
     document.querySelector("#email").value = button.dataset.email;
     const id = button.dataset.id;
     // document.querySelector("#senha").value = button.dataset.senha;
-    updateUsers();
+    updateUsers(id);
   }
 });
 
@@ -86,6 +86,16 @@ async function updateUsers(id) {
     let idade = document.querySelector("#idade").value;
     let email = document.querySelector("#email").value;
     // let senha = document.querySelector("#senha").value;
+    let resp = await fetch(url, {
+      method: "PUT",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ name: nome, idade: idade, email: email }),
+    });
+    if (!resp.ok) {
+      console.error("Erro ao atualizar usuário:", resp.statusText);
+      return;
+    }
+    window.location.reload();
   });
 }
 
