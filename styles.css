@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 28px;
+  color: #1a1a2e;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #1a1a2e;
+}
+
+/* ===================== FORMULARIO ===================== */
+
+.form-section {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* ===================== BOTOES ===================== */
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-save {
+  background-color: #4361ee;
+  color: #fff;
+}
+
+.btn-save:hover {
+  background-color: #3a56d4;
+}
+
+.btn-cancel {
+  background-color: #e5e5e5;
+  color: #333;
+}
+
+.btn-cancel:hover {
+  background-color: #d4d4d4;
+}
+
+.btn-edit {
+  background-color: #f59e0b;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+.btn-edit:hover {
+  background-color: #d97706;
+}
+
+.btn-delete {
+  background-color: #ef4444;
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+.btn-delete:hover {
+  background-color: #dc2626;
+}
+
+/* ===================== TABELA ===================== */
+
+.table-section {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 28px 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  padding: 12px 16px;
+  background-color: #1a1a2e;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+thead th:first-child {
+  border-radius: 6px 0 0 0;
+}
+
+thead th:last-child {
+  border-radius: 0 6px 0 0;
+}
+
+tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: #f8f9ff;
+}
+
+td.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ===================== RESPONSIVO ===================== */
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  .form-section,
+  .table-section {
+    padding: 20px 16px;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 16px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 12px;
+  }
+
+  tbody td {
+    padding: 6px 0;
+    border-bottom: none;
+    font-size: 14px;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    margin-right: 8px;
+  }
+
+  td.actions {
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
+}
