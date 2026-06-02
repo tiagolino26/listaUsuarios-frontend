@@ -96,3 +96,5 @@ async function deleteUser(id) {
   });
   window.location.reload();
 }
+
+//teste
